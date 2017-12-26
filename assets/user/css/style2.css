@@ -1,0 +1,55 @@
+@import "compass/css3";
+$color: #199;
+  
+@mixin font-color {
+  @if lightness($color) > 50 {
+    color: rgba(black,0.8);
+    text-shadow: 0 0.1em 0 rgba(white,0.5);
+  } @else {
+    color: rgba(white,0.85);
+    text-shadow: 0 -0.08em 0 darken($color, 20%);
+  }
+}
+
+body {
+  background: #eee;
+  padding: 3em 0;
+  font: 14px/1.5 Arial,sans-serif;
+}
+
+.box {
+  width: 300px;
+  margin: 0 auto;
+  @include box-shadow(0 0.1em 0.5em rgba(black,0.3), 0 0.1em 0.2em rgba(black,0.4));
+  @include border-radius(0.35em);
+  
+  header, 
+  section {
+    padding: 0 1em;
+  }
+  
+  header {
+    @include font-color;
+    @include border-radius(0.35em 0.35em 0 0);
+    border: 1px solid;
+    border-color: $color darken($color, 5%) darken($color, 10%);
+    background-color: $color;
+    @include background-image(linear-gradient($color, darken($color, 10%)));
+    @include box-shadow(0 0.1em 0.1em rgba(white,0.3) inset);
+  
+    h2 {
+      font-size: 1em;
+      line-height: 1.1;
+    }
+  }
+  
+  section {
+    background-color: #fff;
+    border: 1px solid;
+    border-color: #ccc transparent transparent;
+  
+    &:last-child {
+      @include border-radius(0 0 0.35em 0.35em);
+    }
+  }
+}

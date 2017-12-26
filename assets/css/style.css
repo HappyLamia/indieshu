@@ -1,0 +1,23 @@
+.navbar-blue{
+	background: #57def9;
+	color: #FFF;
+}
+.navbar-blue li a{
+	display: block;
+    color: #FFF;
+    text-decoration: none;
+}
+.navbar-blue li a:hover{
+	background-color: #66a0ff;
+    color: white;
+}
+.white-brand{
+    color: white;
+}
+@font-face{
+    font-family: code39;
+    src: url('barcode39/code39.ttf');
+}
+div{
+	text-align: center
+}
